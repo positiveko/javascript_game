@@ -2,18 +2,18 @@ var cardWidth = 4;
 var cardHeight = 3;
 var cardColor = [];
 var cardColors = [
-  'red',
-  'red',
-  'yellow',
-  'yellow',
-  'blue',
-  'blue',
-  'green',
-  'green',
-  'pink',
-  'pink',
-  'brown',
-  'brown',
+  '#A5736A', // brown
+  '#A5736A',
+  '#FECD56', // yellow
+  '#FECD56',
+  '#50869B', // blue
+  '#50869B',
+  '#698D5D', // green
+  '#698D5D',
+  '#E14B56', // pink
+  '#E14B56',
+  '#F8A255', // orange
+  '#F8A255',
 ];
 var cardColorset = cardColors.slice();
 var clickFlag = true;
