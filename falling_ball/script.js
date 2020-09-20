@@ -41,9 +41,9 @@ document.addEventListener('keyup', (event) => {
 });
 
 var blocks = setInterval(function () {
-  var blockLast = document.getElementById('block' + (counter - 1));
-  var holeLast = document.getElementById('hole' + (counter - 1));
   if (counter > 0) {
+    var blockLast = document.getElementById('block' + (counter - 1));
+    var holeLast = document.getElementById('hole' + (counter - 1));
     var blockLastTop = parseInt(
       window.getComputedStyle(blockLast).getPropertyValue('top')
     );
@@ -51,7 +51,7 @@ var blocks = setInterval(function () {
       window.getComputedStyle(holeLast).getPropertyValue('top')
     );
   }
-  if (blockLastTop < 400 || counter == 0) {
+  if (counter == 0 || blockLastTop < 400) {
     var block = document.createElement('div');
     var hole = document.createElement('div');
     block.setAttribute('class', 'block');
@@ -79,6 +79,7 @@ var blocks = setInterval(function () {
     clearInterval(blocks);
     location.reload();
   }
+
   for (var i = 0; i < currentBlocks.length; i++) {
     let current = currentBlocks[i];
     let iblock = document.getElementById('block' + current);
@@ -112,7 +113,7 @@ var blocks = setInterval(function () {
   }
   if (drop == 0) {
     if (characterTop < 480) {
-      character.style.top = characterTop + 2 + 'px';
+      character.style.top = characterTop + gameSpeed * 3.0 + 'px';
     }
   } else {
     character.style.top = characterTop - gameSpeed + 'px';
