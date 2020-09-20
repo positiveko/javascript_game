@@ -89,8 +89,15 @@ var blocks = setInterval(function () {
     let iholeLeft = parseFloat(
       window.getComputedStyle(ihole).getPropertyValue('left')
     );
-    iblock.style.top = iblockTop - 0.5 + 'px';
-    ihole.style.top = iblockTop - 0.5 + 'px';
+    var gameSpeed = 0.8;
+    // 게임 스피드. 높을수록 빠르게 지나감. 1.0보다 클 경우 제대로 작동하지 않음.
+
+    iblock.style.top = iblockTop - gameSpeed + 'px';
+    ihole.style.top = iblockTop - gameSpeed + 'px';
+
+    // 원본
+    //iblock.style.top = iblockTop - 0.5 + 'px';
+    //ihole.style.top = iblockTop - 0.5 + 'px';
     if (iblockTop < -20) {
       currentBlocks.shift();
       iblock.remove();
@@ -108,6 +115,7 @@ var blocks = setInterval(function () {
       character.style.top = characterTop + 2 + 'px';
     }
   } else {
-    character.style.top = characterTop - 0.5 + 'px';
+    character.style.top = characterTop - gameSpeed + 'px';
+    //character.style.top = characterTop - 0.5 + 'px';
   }
 }, 1);
